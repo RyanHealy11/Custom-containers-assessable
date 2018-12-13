@@ -106,7 +106,7 @@ int main()
 	fob.push_front(3);
 	fob.push_front(4);
 
-	fob.remove(5);
+	fob.remove(1);
 	fob.display();
 
 	// Main game loop

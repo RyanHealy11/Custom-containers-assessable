@@ -35,6 +35,7 @@ inline tForwardList<T>::tForwardList()
 template<typename T>
 inline tForwardList<T>::~tForwardList()
 {
+	while (head != NULL) { pop_front(); }
 	delete head;
 	delete tail;
 
@@ -45,7 +46,7 @@ inline void tForwardList<T>::push_front(const T & val)
 {
 	Node *temp = new Node;
 	temp->data = val;
-	temp->next = NULL;
+	temp->next = head;
 	if (head == NULL) 
 	{
 		head = temp;
@@ -54,8 +55,8 @@ inline void tForwardList<T>::push_front(const T & val)
 	}
 	else 
 	{
-		tail->next = temp;
-		tail = temp;
+		/*tail->next = temp;*/
+		head = temp;
 	}
 }
 
@@ -77,12 +78,13 @@ inline T & tForwardList<T>::front()
 template<typename T>
 inline const T & tForwardList<T>::front() const
 {
-	return head.data;
+	return head->data;
 }
 
 template<typename T>
 inline void tForwardList<T>::remove(const T & val)
 {
+	if (head == NULL) { return; }
 	do {
 		if (head->data == val)
 		{
