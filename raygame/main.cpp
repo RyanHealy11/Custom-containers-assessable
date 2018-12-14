@@ -79,7 +79,7 @@ int main()
 		std::cout << job.front() << std::endl;
 		job.pop();
 	}
-
+	if (0) { std::cout << "biuawdnbgkljbasga List" << std::endl; }
 	std::cout << "" << std::endl;
 	std::cout << "Linked List" << std::endl;
 
@@ -106,8 +106,15 @@ int main()
 	fob.push_front(3);
 	fob.push_front(4);
 
-	fob.remove(1);
+	fob.remove(37);
 	fob.display();
+
+	std::cout << "" << std::endl;
+	std::cout << "" << std::endl;
+	for (auto it = fob.begin(); it != fob.end(); ++it)
+	{
+		std::cout << (*it) << std::endl;
+	}
 
 	// Main game loop
 	while (!WindowShouldClose())    // Detect window close button or ESC key
